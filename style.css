@@ -1,0 +1,176 @@
+/* DM Sans via Google Fonts (link in index.html) */
+
+:root {
+  --kzf-bg: #1d1c1a;
+  --kzf-ink: #1d1c1a;
+  --kzf-bright: #fff;
+  --kzf-accent: #ffc550;
+  --kzf-brand: #e7803c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: "DM Sans", sans-serif;
+}
+
+body.kzf-surface {
+  margin: 0;
+  background: var(--kzf-bg);
+}
+
+.kzf-shell.kzf-surface {
+  overflow: clip;
+}
+
+/* Sections */
+.kzf-panel {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.kzf-panel-fill {
+  display: flex;
+  position: relative;
+  z-index: 3;
+}
+
+.kzf-panel-fill--center {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.kzf-stack {
+  text-align: center;
+}
+
+.kzf-col--limit {
+  width: 100%;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kzf-gap--sm {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.kzf-gap--sm .kzf-title {
+  margin-bottom: 0.2rem;
+}
+
+.kzf-title {
+  letter-spacing: 0;
+  margin: 0 0 0.2rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 4.375rem;
+  font-weight: 700;
+  line-height: 1.03;
+}
+
+.kzf-body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.kzf-shell a {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+.kzf-shell a:hover {
+  opacity: 0.88;
+}
+
+a.kzf-body {
+  text-decoration: none;
+}
+
+.kzf-ink--bright {
+  color: var(--kzf-bright);
+}
+
+.kzf-ink--accent {
+  color: var(--kzf-accent);
+}
+
+.kzf-iconbox {
+  margin-top: 1rem;
+}
+
+/* Image column */
+.kzf-gutter {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.kzf-bound {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-kzf-stage] {
+  position: relative;
+  overflow: hidden;
+}
+
+.kzf-block {
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  width: 50%;
+  margin-top: 2rem;
+}
+
+.kzf-block--push {
+  margin-left: auto;
+}
+
+.kzf-photo {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .kzf-title {
+    font-size: 3.8rem;
+  }
+}
+
+/* WebGL canvas (Three.js injects into [data-kzf-stage]) */
+[data-kzf-stage] canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+/* dat.gui */
+.dg.ac {
+  z-index: 999999 !important;
+  margin-top: 10%;
+  pointer-events: none;
+}
+
+.dg.main {
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+}
