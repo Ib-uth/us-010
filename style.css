@@ -1,5 +1,3 @@
-/* DM Sans via Google Fonts (link in index.html) */
-
 :root {
   --kzf-bg: #1d1c1a;
   --kzf-ink: #1d1c1a;
@@ -22,13 +20,15 @@ html {
 body.kzf-surface {
   margin: 0;
   background: var(--kzf-bg);
+  overflow-x: hidden;
 }
 
 .kzf-shell.kzf-surface {
   overflow: clip;
+  min-width: 0;
+  width: 100%;
 }
 
-/* Sections */
 .kzf-panel {
   position: relative;
   padding-top: 0;
@@ -45,7 +45,12 @@ body.kzf-surface {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-height: 100dvh;
   height: 100%;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  padding-left: max(clamp(1rem, 4vw, 2.5rem), env(safe-area-inset-left));
+  padding-right: max(clamp(1rem, 4vw, 2.5rem), env(safe-area-inset-right));
+  padding-bottom: max(clamp(1rem, 4vw, 2.5rem), env(safe-area-inset-bottom));
 }
 
 .kzf-stack {
@@ -74,14 +79,16 @@ body.kzf-surface {
   letter-spacing: 0;
   margin: 0 0 0.2rem;
   font-family: "DM Sans", sans-serif;
-  font-size: 4.375rem;
+  font-size: clamp(2rem, 5vw + 1.25rem, 4.375rem);
   font-weight: 700;
-  line-height: 1.03;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .kzf-body {
   font-family: "DM Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.35vw + 0.95rem, 1.125rem);
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -110,10 +117,14 @@ a.kzf-body {
   margin-top: 1rem;
 }
 
-/* Image column */
+.kzf-iconbox img {
+  max-width: min(48px, 12vw);
+  height: auto;
+}
+
 .kzf-gutter {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: max(1rem, 5%, env(safe-area-inset-left));
+  padding-right: max(1rem, 5%, env(safe-area-inset-right));
 }
 
 .kzf-bound {
@@ -121,6 +132,9 @@ a.kzf-body {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 [data-kzf-stage] {
@@ -131,12 +145,38 @@ a.kzf-body {
 .kzf-block {
   box-sizing: border-box;
   aspect-ratio: 1;
-  width: 50%;
-  margin-top: 2rem;
+  width: min(50%, 28rem);
+  max-width: 100%;
+  margin-top: clamp(1.25rem, 3vw, 2rem);
 }
 
 .kzf-block--push {
   margin-left: auto;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .kzf-block {
+    width: min(85%, 32rem);
+  }
+
+  .kzf-block--push {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .kzf-block {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .kzf-block--push {
+    margin-left: 0;
+  }
 }
 
 .kzf-photo {
@@ -148,12 +188,23 @@ a.kzf-body {
 }
 
 @media screen and (max-width: 767px) {
-  .kzf-title {
-    font-size: 3.8rem;
+  .kzf-stack {
+    width: 100%;
+  }
+
+  .kzf-panel-fill--center {
+    padding: 1.25rem 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
 }
 
-/* WebGL canvas (Three.js injects into [data-kzf-stage]) */
+@media screen and (max-width: 480px) {
+  .kzf-body {
+    font-size: 1rem;
+  }
+}
+
 [data-kzf-stage] canvas {
   position: absolute;
   top: 0;
@@ -163,7 +214,6 @@ a.kzf-body {
   pointer-events: none;
 }
 
-/* dat.gui */
 .dg.ac {
   z-index: 999999 !important;
   margin-top: 10%;
