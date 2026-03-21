@@ -14,43 +14,47 @@
 <body class="kzf-surface">
   <section class="kzf-shell kzf-surface">
     <div class="kzf-panel">
-      <div class="kzf-panel-fill kzf-panel-fill--center">
-        <div class="kzf-stack">
-          <div class="kzf-col kzf-col--limit">
-            <div class="kzf-gap kzf-gap--sm">
-              <h2 class="kzf-title kzf-ink--bright">SCROLL DOWN</h2>
-            </div>
-            <p class="kzf-body kzf-ink--bright">AND see the magic</p>
-            <a href="#" class="kzf-body">SEE MORE</a>
-            <div class="kzf-iconbox"><img src="images/down-arrow.png" loading="lazy" alt="" /></div>
-          </div>
-        </div>
-      </div>
+      <div class="kzf-panel-fill kzf-panel-fill--center"></div>
     </div>
     <div class="kzf-gutter">
       <div class="kzf-bound">
-        <div data-kzf-stage class="kzf-block"><img class="kzf-photo" src="images/scroll-1.jpg" alt=""
-            sizes="(max-width: 736px) 100vw, 736px" data-kzf-tex loading="lazy"
-            srcset="images/scroll-1-p500.jpg 500w, images/scroll-1.jpg 736w" />
+        <div class="kzf-item">
+          <div class="kzf-stage-head">
+            <h3 class="kzf-stage-title">First reveal</h3>
+            <p class="kzf-stage-desc">Warm gradient grid opens as you scroll past.</p>
+          </div>
+          <div data-kzf-stage class="kzf-block">
+            <a class="kzf-stage-hit" href="#" aria-label="Open first image">
+              <img class="kzf-photo" src="images/scroll-1.jpg" alt="First scroll image"
+                sizes="(max-width: 736px) 100vw, 736px" data-kzf-tex loading="lazy"
+                srcset="images/scroll-1-p500.jpg 500w, images/scroll-1.jpg 736w" />
+            </a>
+          </div>
         </div>
-        <div data-kzf-stage class="kzf-block kzf-block--push"><img class="kzf-photo" src="images/scroll-2.jpg" alt=""
-            sizes="(max-width: 736px) 100vw, 736px" data-kzf-tex loading="lazy"
-            srcset="images/scroll-2-p500.jpg 500w, images/scroll-2.jpg 736w" />
+        <div class="kzf-item kzf-item--push">
+          <div class="kzf-stage-head">
+            <h3 class="kzf-stage-title">Offset frame</h3>
+            <p class="kzf-stage-desc">Pushed right on wide layouts; centers on small screens.</p>
+          </div>
+          <div data-kzf-stage class="kzf-block">
+            <a class="kzf-stage-hit" href="#" aria-label="Open second image">
+              <img class="kzf-photo" src="images/scroll-2.jpg" alt="Second scroll image"
+                sizes="(max-width: 736px) 100vw, 736px" data-kzf-tex loading="lazy"
+                srcset="images/scroll-2-p500.jpg 500w, images/scroll-2.jpg 736w" />
+            </a>
+          </div>
         </div>
-        <div data-kzf-stage class="kzf-block"><img class="kzf-photo" src="images/scroll-3.jpg" alt=""
-            sizes="(max-width: 736px) 100vw, 736px" data-kzf-tex loading="lazy"
-            srcset="images/scroll-3-p500.jpg 500w, images/scroll-3.jpg 736w" />
-        </div>
-      </div>
-    </div>
-    <div class="kzf-panel">
-      <div class="kzf-panel-fill kzf-panel-fill--center">
-        <div class="kzf-stack"><a href="#" class="kzf-body">SEE MORE</a>
-          <div class="kzf-col kzf-col--limit">
-            <div class="kzf-gap kzf-gap--sm">
-              <h2 class="kzf-title kzf-ink--bright">THE END</h2>
-            </div>
-            <p class="kzf-body kzf-ink--accent">Thanks for scrolling — hope the reveal was worth the ride.</p>
+        <div class="kzf-item">
+          <div class="kzf-stage-head">
+            <h3 class="kzf-stage-title">Final pass</h3>
+            <p class="kzf-stage-desc">Last tile completes the scroll story.</p>
+          </div>
+          <div data-kzf-stage class="kzf-block">
+            <a class="kzf-stage-hit" href="#" aria-label="Open third image">
+              <img class="kzf-photo" src="images/scroll-3.jpg" alt="Third scroll image"
+                sizes="(max-width: 736px) 100vw, 736px" data-kzf-tex loading="lazy"
+                srcset="images/scroll-3-p500.jpg 500w, images/scroll-3.jpg 736w" />
+            </a>
           </div>
         </div>
       </div>
